@@ -1,4 +1,4 @@
-{% set version = '1.0.2' %}
+{% set version = '1.0.3' %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,7 +12,7 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/findpython_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/findpython/findpython_{{ version }}.tar.gz
-  sha256: b38b148521927b27a8fd480df797a4c6bc618407606f27bef07d7b93fb6a68f4
+  sha256: 5486535ae2f0a123b630d8eabf93a61b730765f55dfcc8ef4f6e56e7c49408f8
 
 
   # patches:
@@ -28,7 +28,7 @@ build:
     - lib/R/lib/
     - lib/
 
-# Suggests: testthat
+# Suggests: reticulate, testthat
 requirements:
   build:
     - r-base
@@ -63,21 +63,21 @@ extra:
 
 # Package: findpython
 # Type: Package
-# Title: Python Tools to Find an Acceptable Python Binary
-# Version: 1.0.2
+# Title: Functions to Find an Acceptable Python Binary
+# Version: 1.0.3
 # Author: Trevor L Davis and Paul Gilbert.
 # Maintainer: Trevor L Davis <trevor.l.davis@gmail.com>
 # URL: https://github.com/trevorld/findpython
 # BugReports: https://github.com/trevorld/findpython/issues
 # Description: Package designed to find an acceptable python binary.
-# Suggests: testthat
+# Suggests: reticulate, testthat
 # License: MIT + file LICENSE
 # Collate: 'find_python_cmd.r'
-# RoxygenNote: 5.0.1
+# RoxygenNote: 6.0.1
 # NeedsCompilation: no
-# Packaged: 2017-03-14 21:28:13 UTC; trevorld
+# Packaged: 2017-12-01 06:16:17 UTC; trevorld
 # Repository: CRAN
-# Date/Publication: 2017-03-15 05:25:12
+# Date/Publication: 2017-12-01 12:03:05 UTC
 
 # See
 # http://docs.continuum.io/conda/build.html for
