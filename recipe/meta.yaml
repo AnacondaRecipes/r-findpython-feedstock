@@ -10,8 +10,8 @@ package:
 source:
   fn: findpython_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/findpython_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/findpython/findpython_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/findpython_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/findpython/findpython_{{ version }}.tar.gz
   sha256: 5486535ae2f0a123b630d8eabf93a61b730765f55dfcc8ef4f6e56e7c49408f8
 
 
