@@ -1,4 +1,4 @@
-{% set version = '1.0.3' %}
+{% set version = '1.0.5' %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -11,19 +11,20 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/findpython_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/findpython/findpython_{{ version }}.tar.gz
-  sha256: 5486535ae2f0a123b630d8eabf93a61b730765f55dfcc8ef4f6e56e7c49408f8
+  sha256: 3e9a21988cb78833769b02680d128a0cc01bcb41aa9c9725ab1742f349759145
 
 build:
   merge_build_host: True  # [win]
   # If this is a new build for the same version, increment the build number.
   number: 0
+  noarch: generic
 
   # This is required to make R link correctly on Linux.
   rpaths:
     - lib/R/lib/
     - lib/
 
-# Suggests: reticulate, testthat
+# Suggests: covr, reticulate, testthat
 requirements:
   build:
     - {{posix}}zip               # [win]
@@ -62,20 +63,21 @@ extra:
 # Package: findpython
 # Type: Package
 # Title: Functions to Find an Acceptable Python Binary
-# Version: 1.0.3
-# Author: Trevor L Davis and Paul Gilbert.
-# Maintainer: Trevor L Davis <trevor.l.davis@gmail.com>
+# Version: 1.0.5
+# Authors@R: c(person("Trevor L", "Davis", role=c("aut", "cre"), email="trevor.l.davis@gmail.com"), person("Paul", "Gilbert", role="aut"))
 # URL: https://github.com/trevorld/findpython
 # BugReports: https://github.com/trevorld/findpython/issues
 # Description: Package designed to find an acceptable python binary.
-# Suggests: reticulate, testthat
+# Suggests: covr, reticulate, testthat
 # License: MIT + file LICENSE
 # Collate: 'find_python_cmd.r'
-# RoxygenNote: 6.0.1
+# RoxygenNote: 6.1.1
 # NeedsCompilation: no
-# Packaged: 2017-12-01 06:16:17 UTC; trevorld
+# Packaged: 2019-03-08 20:15:49 UTC; trevorld
+# Author: Trevor L Davis [aut, cre], Paul Gilbert [aut]
+# Maintainer: Trevor L Davis <trevor.l.davis@gmail.com>
 # Repository: CRAN
-# Date/Publication: 2017-12-01 12:03:05 UTC
+# Date/Publication: 2019-03-08 21:02:48 UTC
 
 # See
 # http://docs.continuum.io/conda/build.html for
